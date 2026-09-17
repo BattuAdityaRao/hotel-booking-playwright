@@ -1,0 +1,8 @@
+{
+  "validBooking": {
+    "firstname": "John",
+    "lastname": "Doe",
+    "email": "john.doe@example.com",
+    "phone": "12345678901"
+  }
+}

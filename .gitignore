@@ -1,0 +1,12 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/reports/*
+!/reports/.gitkeep
+/screenshots/*
+!/screenshots/.gitkeep
+.env
+playwright/.auth/*
+!playwright/.auth/admin.json

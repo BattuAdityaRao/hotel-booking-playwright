@@ -1,0 +1,9 @@
+{
+  "validContact": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phone": "01234567890",
+    "subject": "Booking Inquiry",
+    "message": "I would like to inquire about room availability for next month."
+  }
+}
