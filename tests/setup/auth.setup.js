@@ -16,7 +16,7 @@ setup('authenticate as admin', async ({ page }) => {
   );
 
   // Confirm that login actually opened the admin room-management page
-  await expect(page.locator('#roomName')).toBeVisible();
+  await expect(page).toHaveURL(/\/admin\/rooms/);
 
   await page.context().storageState({ path: authFile });
 });

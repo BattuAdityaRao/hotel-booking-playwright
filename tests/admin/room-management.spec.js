@@ -24,9 +24,11 @@ test.describe('Admin Room Management Tests', () => {
 
   test('should delete a room', async ({ adminRoomPage }) => {
 
+    const roomNumber = `6${Date.now().toString().slice(-3)}`;
+
     await adminRoomPage.navigate();
 
-    await adminRoomPage.enterRoomNumber('206');
+    await adminRoomPage.enterRoomNumber(roomNumber);
     await adminRoomPage.selectRoomType('Single');
     await adminRoomPage.selectAccessible('true');
     await adminRoomPage.enterRoomPrice('200');
@@ -34,13 +36,13 @@ test.describe('Admin Room Management Tests', () => {
     await adminRoomPage.clickCreateRoom();
 
     await expect(
-        adminRoomPage.isRoomDisplayed('206')
+        adminRoomPage.isRoomDisplayed(roomNumber)
     ).toBeVisible();
 
-    await adminRoomPage.deleteRoom('206');
+    await adminRoomPage.deleteRoom(roomNumber);
 
     await expect(
-        adminRoomPage.isRoomDisplayed('206')
+        adminRoomPage.isRoomDisplayed(roomNumber)
     ).toHaveCount(0);
   });
 
