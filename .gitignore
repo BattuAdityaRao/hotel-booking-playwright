@@ -9,4 +9,3 @@ node_modules/
 !/screenshots/.gitkeep
 .env
 playwright/.auth/*
-!playwright/.auth/admin.json
