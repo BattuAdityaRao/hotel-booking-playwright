@@ -46,7 +46,7 @@ The framework is designed to support:
 | 2 | Aditya | Contact | Contact form validation, invalid data and success/error messages |
 | 3 | Aqeel | Admin Login | Login validation, session handling and logout |
 | 4 | Athul Daniel | Regression + Cross-browser | Regression execution and Chrome/Edge/Firefox compatibility |
-| 5 | Charita | Admin Room Management | Add, edit, delete rooms and room validation |
+| 5 | Charitha | Admin Room Management | Add, edit, delete rooms and room validation |
 | 6 | Tarun | Home Page | Page loading, navigation, images, map, footer and responsiveness |
 | 7 | Anusha | Rooms | Room listing, details, images, prices, amenities and booking |
 | 8 | Jaswanth | Search / Availability | Date selection, availability and boundary cases |
