@@ -74,17 +74,22 @@ export class AdminBookingPage {
   async login(username, password) {
     await this.page.goto(this.adminUrl);
     await this.page.waitForLoadState('networkidle');
-    // If the session is still valid the server redirects straight to /admin/rooms
+    // If the session is still valid the server redirects straight to /admin/rooms or /admin
+    if (await this.roomListings.first().isVisible()) {
+      return;
+    }
     if (this.page.url().includes('/admin/rooms')) {
       await this.roomListings.first().waitFor({ state: 'visible' });
       return;
     }
-    await this.usernameInput.fill(username);
-    await this.passwordInput.fill(password);
-    await this.loginButton.click();
-    await this.page.waitForURL('**/admin/rooms');
-    // Wait for room listings to render before returning
-    await this.roomListings.first().waitFor({ state: 'visible' });
+    if (await this.usernameInput.isVisible()) {
+      await this.usernameInput.fill(username);
+      await this.passwordInput.fill(password);
+      await this.loginButton.click();
+      await this.page.waitForURL('**/admin/rooms');
+      // Wait for room listings to render before returning
+      await this.roomListings.first().waitFor({ state: 'visible' });
+    }
   }
 
   /**

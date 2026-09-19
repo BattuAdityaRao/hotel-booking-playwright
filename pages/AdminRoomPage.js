@@ -21,6 +21,17 @@ export class AdminRoomPage {
 
   async navigate() {
     await this.page.goto('/admin/rooms');
+    await this.page.waitForLoadState('networkidle');
+    const url = this.page.url();
+    if (!url.includes('/admin/rooms')) {
+      const usernameInput = this.page.locator('#username');
+      if (await usernameInput.isVisible()) {
+        await usernameInput.fill(process.env.ADMIN_USERNAME || 'admin');
+        await this.page.locator('#password').fill(process.env.ADMIN_PASSWORD || 'password');
+        await this.page.locator('#doLogin').click();
+        await this.page.waitForURL('**/admin/rooms');
+      }
+    }
   }
 
   async enterRoomNumber(roomNumber) {

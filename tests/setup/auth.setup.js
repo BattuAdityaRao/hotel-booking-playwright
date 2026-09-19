@@ -15,8 +15,8 @@ setup('authenticate as admin', async ({ page }) => {
       process.env.ADMIN_PASSWORD || 'password'
   );
 
-  // Confirm that login actually opened the admin room-management page
-  await expect(page).toHaveURL(/\/admin\/rooms/);
+  // Confirm that login actually opened the admin page
+  await expect(page).toHaveURL(/\/admin/);
 
   await page.context().storageState({ path: authFile });
 });

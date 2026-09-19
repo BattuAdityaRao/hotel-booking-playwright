@@ -35,15 +35,19 @@ export class BookingPage {
 
   async openRoomReservation(roomId = '1') {
     const bookBtn = this.page.locator(`a.btn-primary[href*='/reservation/${roomId}']`).first();
+    await bookBtn.waitFor({ state: 'visible', timeout: 15000 });
     await bookBtn.scrollIntoViewIfNeeded();
     await bookBtn.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   async selectDateRange(startIndex = 12, endIndex = 14) {
-    await this.calendarDays.first().waitFor();
+    await this.calendarDays.first().waitFor({ state: 'visible', timeout: 15000 });
 
     const startDay = this.calendarDays.nth(startIndex);
     const endDay = this.calendarDays.nth(endIndex);
+
+    await startDay.scrollIntoViewIfNeeded();
 
     const startBox = await startDay.boundingBox();
     const endBox = await endDay.boundingBox();

@@ -1,4 +1,15 @@
 {
-  "cookies": [],
+  "cookies": [
+    {
+      "name": "token",
+      "value": "qzvMzERQUHEcL31V",
+      "domain": "automationintesting.online",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
   "origins": []
 }
