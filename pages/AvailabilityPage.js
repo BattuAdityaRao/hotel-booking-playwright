@@ -21,8 +21,8 @@ export class AvailabilityPage {
 
   /** Navigate to the home page (where the availability search widget lives). */
   async goto() {
-    await this.page.goto('/');
-    await this.page.waitForLoadState('domcontentloaded');
+    await this.page.goto('/', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await this.checkInInput.waitFor({ state: 'visible', timeout: 15000 });
   }
 
   // ── Date helpers ──────────────────────────────────────────────────────────
@@ -33,8 +33,8 @@ export class AvailabilityPage {
    * Date format expected by the site: dd/MM/yyyy (e.g. "25/11/2026").
    */
   async #fillDate(locator, ddMMYYYY) {
-    await locator.click({ clickCount: 3 });
-    await locator.type(ddMMYYYY);
+    await locator.waitFor({ state: 'visible', timeout: 15000 });
+    await locator.fill(ddMMYYYY);
   }
 
   /** Select the check-in date. Format: "dd/MM/yyyy". */
