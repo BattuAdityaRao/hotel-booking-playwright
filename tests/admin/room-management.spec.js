@@ -1,6 +1,6 @@
 import { test, expect } from '../../fixtures/testFixtures';
 
-test.describe('Admin Room Management Tests', () => {
+test.describe('Admin Room Management Module', () => {
 
   test('should add a new room', async ({ adminRoomPage }) => {
 

@@ -24,7 +24,7 @@ import { AvailabilityPage } from '../../pages/AvailabilityPage.js';
  * than what would be desirable in a production system.
  */
 
-test.describe('Search / Availability', () => {
+test.describe('Search/Availability Module', () => {
 
   // Each test gets a fresh page with the availability page already loaded.
   let availabilityPage;

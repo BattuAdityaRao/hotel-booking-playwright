@@ -10,7 +10,7 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'password';
 
 // ─── Test Suite ──────────────────────────────────────────────────────────────
 // Run serially to avoid parallel booking-date conflicts on the shared live server.
-test.describe('Admin Booking Management', () => {
+test.describe('Admin Booking Management Module', () => {
   test.describe.configure({ mode: 'serial' });
 
   // Raise timeout to 60s per test — the live server can be slow and each test

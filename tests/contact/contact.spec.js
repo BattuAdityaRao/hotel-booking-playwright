@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { ContactPage } from '../../pages/ContactPage';
 
-test.describe('Contact Form Tests', () => {
+test.describe('Contact Module', () => {
 
   let contactPage;
 

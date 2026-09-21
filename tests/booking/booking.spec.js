@@ -12,7 +12,7 @@ test.describe('Booking Tests', () => {
 import { test, expect } from '@playwright/test';
 import { BookingPage } from '../../pages/BookingPage';
 
-test.describe.serial('singleRoomBooking', () => {
+test.describe.serial('Single Room Booking Module', () => {
   let bookingPage;
 
   const validCustomer = {
@@ -95,7 +95,7 @@ test.describe.serial('singleRoomBooking', () => {
   });
 });
 
-test.describe.serial('doubleRoomBooking', () => {
+test.describe.serial('Double Room Booking Module', () => {
   let bookingPage;
 
   const validCustomer = {

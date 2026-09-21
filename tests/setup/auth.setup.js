@@ -3,7 +3,7 @@ import { LoginPage } from '../../pages/LoginPage';
 
 const authFile = 'playwright/.auth/admin.json';
 
-setup('authenticate as admin', async ({ page }) => {
+setup('Authentication', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   await loginPage.navigate();
